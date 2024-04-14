@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Todo</title>
+    </head>
+    <body>
+
+        <h2>Todo</h2>
+        <p>User: {{user.username}}</p>
+        <h3>Todo-list</h3>
+
+        <ul>
+
+          {% for item in items %}
+            <li>
+              {{item.note}}
+              <form style="margin-bottom: 1rem;" action='delete/' method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{item.id}}" />
+                <input type="submit" value="Delete"/>
+              </form>
+            </li>
+      
+          {% endfor %}
+        </ul>
+
+
+        <form action='add/' method="POST">
+            {% csrf_token %}
+            <input type="text" name="note" id="note"/>
+            <input type="submit" value="Send"/>
+        </form>
+
+        <form style="margin-top: 1rem;" action='logout/' method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Logout"/>
+        </form>
+
+        
+
+        
+
+        <script inline="javascript">
+            function addTodo() {
+                var note = document.querySelector("#note").value;
+                if (!note) {
+                    return;
+                }
+
+                console.log(note);
+
+                var http = new XMLHttpRequest();
+
+				        // We are not using any CSRF protection(!) this should not be done in production
+                http.open("POST", 'add/', true);
+                http.setRequestHeader("Content-type", "application/json");
+                var data = new Object();
+                data.note = note;
+
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
+                        if (http.status === 200) {
+                            addTodoToList(JSON.parse(http.responseText));
+                        }
+                    }
+                }
+
+                http.send(JSON.stringify(data));
+                document.getElementById('note').value = ''
+            }
+
+
+            function addTodoToList(todo) {
+                var liElement = document.createElement("li");
+                liElement.appendChild(document.createTextNode(todo.note));
+                document.querySelector("#todos").appendChild(liElement);
+            }
+        </script>
+    </body>
+</html>
