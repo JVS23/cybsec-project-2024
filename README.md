@@ -9,7 +9,7 @@ you can start the project with the following command:
 python3 manage.py runserver
 ```
 
-Depending on your configuration, you might need to use the command "py", or "python" instead of "python3".
+Depending on your configuration, you might need to use the command "py" or "python" instead of "python3".
 
 The application is a simple Todo-app, which serves as a way to showcase different security flaws. In the section below we'll be assessing the implementations of these security flaws, and also their solutions.
 
