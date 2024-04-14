@@ -2,17 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import sqlite3
 
 SERVER_DIR = 'src'
-
-if os.path.exists(SERVER_DIR + '/db.sql') and not os.path.exists(SERVER_DIR + '/db.sqlite3'):
-	print("Found db.sql but not db.sqlite, recreating a database")
-	dump = '\n'.join(open(SERVER_DIR + '/db.sql').readlines())
-	conn = sqlite3.connect(SERVER_DIR + '/db.sqlite3')
-	cursor = conn.cursor()
-	cursor.executescript(dump)
-	conn.commit()
 
 def main():
     """Run administrative tasks."""
@@ -26,7 +17,6 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()
