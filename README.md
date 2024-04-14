@@ -16,8 +16,11 @@ The application is a simple Todo-app, which serves as a way to showcase differen
 You need to log in to access user-specific Todo-lists.
 Here are test users and passwords for the application:
 
-tester1: Mooc2024
-tester2: Mooc2024
+| Name        | Password    |
+| ----------- | ----------- |
+| tester1     | Mooc2024    |
+| tester2     | Mooc2024    |
+
 
 
 
