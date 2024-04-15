@@ -8,6 +8,7 @@
 
         <h2>Todo</h2>
         <p>User: {{user.username}}</p>
+
         <h3>Todo-list</h3>
 
         <ul>
@@ -15,7 +16,7 @@
           {% for item in items %}
             <li>
               {{item.note}}
-              <form style="margin-bottom: 1rem;" action='delete/' method="POST">
+              <form style="margin-bottom: 1rem; visibility: hidden" action='delete/' method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="id" value="{{item.id}}" />
                 <input type="submit" value="Delete"/>

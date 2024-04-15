@@ -7,25 +7,24 @@ from django.contrib.auth.models import User
 from .models import Item
 import json
 
-#todos = ['Write code', 'Create commit', 'Push code']
+msg = "Hello authenticated user who's definitely logged in!"
 
 
 @login_required
 def indexPageView(request):
-
     todos = Item.objects.filter(owner=request.user)
     return render(request, 'pages/index.html', {'items': todos})
 
 
-#@login_required
-#def todoView(request):
-#    todos = Item.objects.filter(owner=request.user)
-#    return JsonResponse({'todos' : [{'name': i} for i in todos]})
+# Should be accessible only by logged in users, remove comment from line 20 to enable correct behavior
+# @login_required
+def userGreetingView(request):
+    owner=request.user
+    return render(request, 'pages/greeting.html', {'msg': msg, 'visitor': owner})
 
 
 @csrf_exempt
 def addTodo(request):
-
     if request.method == 'POST':
         note = request.POST.get('note')
         currentUser = request.user
@@ -37,6 +36,14 @@ def addTodo(request):
 
 @login_required
 def delete(request):
+
+    # The following codeblock is an simplified validity check, by uncommenting it
+    # you can make sure that only the "jvs" user can delete items even if they see the button
+    
+    #if request.user.username != 'jvs':
+    #    return redirect('/')
+
+
     f = Item.objects.get(pk=request.POST.get('id'))
     if request.user.id != f.owner.id:
         return redirect('/')
