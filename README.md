@@ -20,6 +20,7 @@ Here are test users and passwords for the application:
 | ----------- | ----------- |
 | tester1     | Mooc2024    |
 | tester2     | Mooc2024    |
+| jvs         | password    |
 
 
 
@@ -41,7 +42,7 @@ LINK: TBA
 
 By creating applications with insecure design, there might often be unwanted consequences due to users accessing functionality that isn't meant for them to be used. There are countless ways to run into these problems, so following proper clean code & safety standards when developing applications is a must.
 
-This example showcases a vulnerability due to insecure design in the Todo-list of a user, where users shouldn't be able to delete their Todo-list items for reasons only known by the admins. The 'Delete'-button should be invisible to users, but if the users manipulate the form HTML-element in browser console they can turn the button back on by switching visibility to "true". This is due to the button visibility only being hidden by CSS, and also the Delete-button not checking user validity (in this case the user needs to be "admin" to delete their todo's).
+This example showcases a vulnerability due to insecure design in the Todo-list of a user, where users shouldn't be able to delete their Todo-list items for reasons only known by the admins. The 'Delete'-button should be invisible to users, but if the users manipulate the form HTML-element in browser console they can turn the button back on by switching visibility to "true". This is due to the button visibility only being hidden by CSS, and also the Delete-button not checking user validity in the backend (in this case the user needs to be "admin" to delete their todo's).
 
 
 ## Flaw 3 - A06:2021, Vulnerable and Outdated Components
