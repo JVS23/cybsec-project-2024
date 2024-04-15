@@ -46,6 +46,16 @@ This example showcases a vulnerability due to insecure design in the Todo-list o
 
 
 ## Flaw 3 - A06:2021, Vulnerable and Outdated Components
+LINK: TBA
+
+Most projects rely on often a large library of dependencies, which is pretty much the industry standard nowadays. While most well known open-source projects can be used safely, there is always a chance of them having security issues, and by using them in your projects you might be exposing your own projects to the same security issues too. 
+
+In this example we have a requirements.txt file, which is a typical way to configure python project dependencies.
+
+When cloning the project, users can install the dependencies with the command "pip install -r requirements.txt", but it's not recommended for this project since there is no use for it which is why both the items in reqs file are commented out to not have anyone accidentally install them. 
+
+If the requirements file contains outdated dependencies, there is a risk of the software being insecure due to problems in older versions, for a good recent example see the XZ utils case: https://pentest-tools.com/blog/xz-utils-backdoor-cve-2024-3094
+
 
 ## Flaw 4 - A03:2021, Injection
 

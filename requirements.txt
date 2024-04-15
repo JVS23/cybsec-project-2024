@@ -1,0 +1,9 @@
+# If we had a reason to use urllib3, we could use the following:
+#urllib==1.24.2
+
+# This version has vulnerabilities, source: https://snyk.io/reports/python-security-insights/
+
+
+# By forcing our dependency to be at least 1.26.6, we can avoid the vulnerabilities.
+
+# urllib>=1.26.6
