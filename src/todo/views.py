@@ -49,3 +49,23 @@ def delete(request):
         return redirect('/')
     f.delete()
     return redirect('/')
+
+
+# Showcase a SQL injection vulnerability
+@login_required
+def getItemsVulnerable(request):
+    owner_id = request.GET.get('owner', '')
+
+
+    query = "SELECT * FROM todo_item WHERE owner_id = '%s'" % owner_id
+    items = Item.objects.raw(query)
+
+    # You can fix the injection by using the safe way to process queries below,
+    # and commenting out the previous two lines
+
+    #items = Item.objects.filter(owner=owner_id)
+
+    itemsList = []
+    for item in items:
+        itemsList.append(item.note)
+    return JsonResponse(itemsList, safe=False)

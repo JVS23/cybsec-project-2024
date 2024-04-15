@@ -58,6 +58,11 @@ If the requirements file contains outdated dependencies, there is a risk of the 
 
 
 ## Flaw 4 - A03:2021, Injection
+LINK: TBA
+
+There are multiple ways for developers to run into SQL injection vulnerabilities, and it's truly a classic security vulnerability. Nowadays there are many safety nets for developers to avoid the most common SQL injection fumbles, but they still happen due to avoiding these safety nets and/or more complex exploits.
+
+This example has an SQL injection due to not using the Django prebuilt functionality for accessing data, and rather using classic SQL commands to the database. This leads to the SQL not being sanitized which allows funky things to happen. In this case you can use the query "getItemsVulnerable/?owner=' OR '1'='1" to override the "WHERE" statement, changing the designed functionality. This is technically a SQL injection, but a lot worse things can happen due to SQL injections, for example the legendary "DROP TABLES".
 
 ## Flaw 5 -
 
