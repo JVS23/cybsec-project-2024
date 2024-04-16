@@ -38,7 +38,7 @@ The technical implementation of the fix differs based on the used stack for buil
 
 
 ## Flaw 2 - A03:2021, Injection
-LINK: https://github.com/JVS23/cybsec-project-2024/blob/686a38972db50136791aa8ac86f30b07b177ea73/src/todo/views.py#L63
+LINK: https://github.com/JVS23/cybsec-project-2024/blob/main/src/todo/views.py#L63
 
 There are multiple ways for developers to run into SQL injection vulnerabilities, and it's truly a classic security vulnerability. Nowadays there are many safety nets for developers to avoid the most common SQL injection fumbles, but they still happen due to avoiding these safety nets and/or more complex exploits.
 
