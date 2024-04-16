@@ -13,7 +13,7 @@ Depending on your configuration, you might need to use the command "py" or "pyth
 
 The application is a simple Todo-app, which serves as a way to showcase different security flaws. In the section below we'll be assessing the implementations of these security flaws, and also their solutions. The solutions are commented out, and by uncommenting them the vulnerabilities can be fixed.
 
-You need to log in to access user-specific Todo-lists.
+You need to log in to access user view for the todo-lists.
 Here are test users and passwords for the application:
 
 | Name        | Password    |
