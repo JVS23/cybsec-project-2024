@@ -19,11 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+DEBUG = True
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ojsl0u6#o4n=(z#c$se85xqmd1^9fw@!q=e%%l#g_5j^^6)mzd'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -86,9 +87,9 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
+# This needs to be uncommented to have password validation enabled
+"""
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -103,10 +104,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+"""
+# Should be left to default, as in the line should be commented out
+SESSION_COOKIE_AGE = 2147483647
+# Should be True
+SESSION_COOKIE_HTTPONLY = False
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+
+
 
 LANGUAGE_CODE = 'en-us'
 
