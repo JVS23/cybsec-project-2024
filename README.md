@@ -26,7 +26,7 @@ Here are test users and passwords for the application:
 
 
 ## Flaw 1 - A01:2021, Broken Access Control
-LINK: https://github.com/JVS23/cybsec-project-2024/blob/686a38972db50136791aa8ac86f30b07b177ea73/src/todo/views.py#L19
+LINK: https://github.com/JVS23/cybsec-project-2024/blob/main/src/todo/views.py#L19
 
 Broken access control is the occurrance of a security flaw where users can access data that they are unauthorized to access, or even use functionalities that are meant to be for authorized personnel only.
 
@@ -46,7 +46,7 @@ This example has an SQL injection due to not using the Django prebuilt functiona
 
 
 ## Flaw 3 - A04:2021, Insecure Design
-LINK: https://github.com/JVS23/cybsec-project-2024/blob/686a38972db50136791aa8ac86f30b07b177ea73/src/todo/views.py#L40
+LINK: https://github.com/JVS23/cybsec-project-2024/blob/main/src/todo/views.py#L40
 
 By creating applications with insecure design, there might often be unwanted consequences due to users accessing functionality that isn't meant for them to be used. There are countless ways to run into these problems, so following proper clean code & safety standards when developing applications is a must.
 
@@ -54,7 +54,7 @@ This example showcases a vulnerability due to insecure design in the Todo-list o
 
 
 ## Flaw 4 - A05:2021, Security Misconfiguration
-LINK: https://github.com/JVS23/cybsec-project-2024/blob/686a38972db50136791aa8ac86f30b07b177ea73/src/config/settings.py#L91
+LINK: https://github.com/JVS23/cybsec-project-2024/blob/main/src/config/settings.py#L91
 
 Security misconfigurations are a very common vulnerability in applications, with OWASP reporting 90% of tested applications having a vulnerability regarding this area in 2021. Common misconfigurations are for example incorrectly configured authorizations, default settings or wrong configs regarding security settings and having wrong kinds of features enabled for the specific application.
 
@@ -62,7 +62,7 @@ In this application we have a few examples of security misconfigurations. In the
 
 
 ## Flaw 5 - A06:2021, Vulnerable and Outdated Components
-LINK: https://github.com/JVS23/cybsec-project-2024/blob/686a38972db50136791aa8ac86f30b07b177ea73/requirements.txt#L1
+LINK: https://github.com/JVS23/cybsec-project-2024/blob/main/requirements.txt#L1
 
 Most projects rely on often a large library of dependencies, which is pretty much the industry standard nowadays. While most well known open-source projects can be used safely, there is always a chance of them having security issues, and by using them in your projects you might be exposing your own projects to the same security issues too. 
 
