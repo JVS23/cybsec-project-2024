@@ -1,4 +1,4 @@
-## LINK
+## Instructions
 
 Repository link: https://github.com/JVS23/cybsec-project-2024
 
