@@ -32,7 +32,7 @@ Broken access control is the occurrance of a security flaw where users can acces
 
 These flaws can be fixed by requiring stricter authorization for accessing the functionalities. 
 
-In this project, we can fix a broken access control by adding a Django decorator "@login_required" in functions that need to have authorization for access. As can be seen, by accessing a page without authorization you can encounter unplanned functionality, which can appear even in the form of serious security issues. In the example we can just see that the greeting works unexpectedly if there's no logged in user when there should be.
+In this project, we can fix a broken access control by adding a Django decorator "@login_required" in functions that need to have authorization for access. As can be seen, by accessing a page without authorization you can encounter unplanned functionality, which can appear even in the form of serious security issues. In the example we can just see that the greeting at the page /greeting works unexpectedly if there's no logged in user when there should be.
 
 The technical implementation of the fix differs based on the used stack for building the application, but the principle remains the same. 
 
